@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "frontendPath": "",
+  "apiPath": "",
+  "phpExecutable": "php",
+  "dashboardPort": 4310,
+  "apiPort": 8000,
+  "expoPort": 8081,
+  "network": {
+    "mode": "lan",
+    "preferredInterface": null,
+    "manualAddress": null
+  },
+  "expoRuntime": "development-build",
+  "openBrowser": true
+}

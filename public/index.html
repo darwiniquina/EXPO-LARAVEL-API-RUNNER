@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>RN Laravel API Runner</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="icon-terminal" viewBox="0 0 24 24"><path d="m4 17 6-5-6-5M12 19h8" /></symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" /></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></symbol>
+      <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14 5-5-5-5m5 5H9" /></symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8z" /></symbol>
+      <symbol id="icon-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" /></symbol>
+      <symbol id="icon-restart" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5" /><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3" /></symbol>
+      <symbol id="icon-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="8" rx="2" /><rect x="3" y="13" width="18" height="8" rx="2" /><path d="M7 7h.01M7 17h.01M11 7h8m-8 10h8" /></symbol>
+      <symbol id="icon-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="M3 8v8l9 5 9-5V8m-9 5v8" /></symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></symbol>
+      <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" /><path d="M19.4 13.5a7.4 7.4 0 0 0 0-3l1.5-1.2-1.5-2.6-1.8.7a7.5 7.5 0 0 0-2.6-1.5l-.3-1.9h-3l-.3 1.9a7.5 7.5 0 0 0-2.6 1.5L7 6.7 5.5 9.3 7 10.5a7.4 7.4 0 0 0 0 3l-1.5 1.2L7 17.3l1.8-.7a7.5 7.5 0 0 0 2.6 1.5l.3 1.9h3l.3-1.9a7.5 7.5 0 0 0 2.6-1.5l1.8.7 1.5-2.6z" /></symbol>
+      <symbol id="icon-network" viewBox="0 0 24 24"><path d="M5 9a11 11 0 0 1 14 0M8 12a6.5 6.5 0 0 1 8 0m-5 3h.01M3 6a15 15 0 0 1 18 0" /></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14" /></symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M3 6h18m-2 0-.9 14H5.9L5 6m4 0V4h6v2m-5 4v6m4-6v6" /></symbol>
+      <symbol id="icon-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3" /></symbol>
+      <symbol id="icon-minimize" viewBox="0 0 24 24"><path d="M8 3v5H3m13-5v5h5M3 16h5v5m13-5h-5v5" /></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m18 6-12 12M6 6l12 12" /></symbol>
+    </svg>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark">RN</div>
+          <div><p class="eyebrow">LOCAL DEVELOPMENT</p><h1>Laravel API Runner</h1></div>
+        </div>
+        <div class="top-actions"><span id="runner-uptime" class="uptime">Runner ready</span><button id="show-settings" class="button quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-settings" /></svg><span class="button-label">Settings</span></button><button id="show-consoles" class="button quiet" aria-expanded="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-terminal" /></svg><span class="button-label">Consoles</span></button><button id="show-about" class="button quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-info" /></svg><span class="button-label">About</span></button><button id="theme-toggle" class="button quiet" aria-label="Switch to dark theme"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-moon" /></svg><span class="button-label">Dark theme</span></button><button id="exit-runner" class="button quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-logout" /></svg><span class="button-label">Exit Runner</span></button></div>
+      </header>
+
+      <section id="banner" class="banner hidden" role="status"></section>
+
+      <section class="hero panel">
+        <div><p class="eyebrow">MOBILE API WORKSPACE</p><h2>One launch. One connection.</h2><p class="muted">Start Laravel and Expo with one LAN address. Project environment files stay untouched.</p></div>
+        <div class="hero-actions"><button id="start-both" class="button primary"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-play" /></svg><span class="button-label">Start Both</span></button><button id="stop-both" class="button secondary"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stop" /></svg><span class="button-label">Stop All Services</span></button></div>
+      </section>
+
+      <div class="columns dashboard-columns">
+
+
+        <div class="right-column">
+          <section class="panel services-panel">
+          <div class="section-heading"><div class="section-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-server" /></svg><div><p class="eyebrow">PROCESS LIFECYCLE</p><h2>Services</h2></div></div><span id="operation-pill" class="pill">Idle</span></div>
+            <article class="service-card" data-service="api">
+              <div class="service-top"><div><span class="service-icon api-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-server" /></svg></span><div><h3>Laravel API</h3><p class="service-detail">Listening readiness only</p></div></div><span class="state-badge state-stopped">Stopped</span></div>
+              <p class="endpoint">No endpoint</p><p class="service-error hidden"></p><div class="service-actions"><button data-action="start" class="button small"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-play" /></svg><span class="button-label">Start</span></button><button data-action="restart" class="button small"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-restart" /></svg><span class="button-label">Restart</span></button><button data-action="stop" class="button small quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stop" /></svg><span class="button-label">Stop</span></button></div>
+            </article>
+            <article class="service-card" data-service="expo">
+              <div class="service-top"><div><span class="service-icon expo-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-box" /></svg></span><div><h3>Expo Metro</h3><p class="service-detail">Metro bundle server</p></div></div><span class="state-badge state-stopped">Stopped</span></div>
+              <p class="endpoint">No endpoint</p><p class="service-error hidden"></p><div class="service-actions"><button data-action="start" class="button small"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-play" /></svg><span class="button-label">Start</span></button><button data-action="restart" class="button small"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-restart" /></svg><span class="button-label">Restart</span></button><button data-action="stop" class="button small quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stop" /></svg><span class="button-label">Stop</span></button></div>
+            </article>
+          </section>
+
+          <section class="panel connection-panel">
+          <div class="section-heading"><div class="section-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone" /></svg><div><p class="eyebrow">PHONE CONNECTION</p><h2>Scan to open app</h2></div></div><span id="connection-pill" class="pill">Waiting</span></div>
+            <div class="connection-content"><div class="qr-frame"><div id="qr-placeholder">QR appears<br />when Expo ready</div><img id="qr-image" class="hidden" alt="Expo connection QR code" /></div><div class="connection-details"><p class="muted">Open development build camera scanner and scan QR.</p><div class="copy-row"><code id="expo-url">Not connected</code><button id="copy-expo" class="button small" disabled><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-copy" /></svg><span class="button-label">Copy</span></button></div><div class="copy-row"><code id="api-url">API: not connected</code><button id="copy-api" class="button small" disabled><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-copy" /></svg><span class="button-label">Copy</span></button></div><p id="connection-note" class="small-note">API says “Listening, application health unverified.” Device login checks tenant routing.</p></div></div>
+          </section>
+        </div>
+      </div>
+
+      <footer><span>Local dashboard bound to 127.0.0.1</span><span>Services may be reachable on your LAN</span></footer>
+    </main>
+        <dialog id="settings-dialog" class="settings-dialog" aria-labelledby="settings-title">
+      <section class="panel setup-panel settings-panel">
+          <div class="section-heading"><div class="section-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-settings" /></svg><div><p class="eyebrow">RUNNER SETTINGS</p><h2 id="settings-title">Project settings</h2></div></div><div class="settings-heading-actions"><span id="settings-lock" class="pill">Editable</span><button id="close-settings" class="button small quiet" aria-label="Close settings"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close" /></svg><span class="button-label">Close</span></button></div></div>
+          <p id="settings-message" class="settings-message hidden" role="status"></p>
+          <form id="settings-form">
+            <label>Mobile project folder<input name="frontendPath" type="text" placeholder="Path to your Expo project" autocomplete="off" required /><small>Absolute path to React Native Expo app.</small><span class="field-error" data-error="frontendPath"></span></label>
+            <label>Laravel API project folder<input name="apiPath" type="text" placeholder="Path to your Laravel API project" autocomplete="off" required /><small>Absolute path to Laravel app.</small><span class="field-error" data-error="apiPath"></span></label>
+            <label>PHP executable<input name="phpExecutable" type="text" placeholder="php" autocomplete="off" required /><small>PATH command or absolute executable path.</small><span class="field-error" data-error="phpExecutable"></span></label>
+
+            <div class="form-grid ports">
+              <label>Dashboard<input name="dashboardPort" type="number" min="1024" max="65535" required /><span class="field-error" data-error="dashboardPort"></span></label>
+              <label>Laravel API<input name="apiPort" type="number" min="1024" max="65535" required /><span class="field-error" data-error="apiPort"></span></label>
+              <label>Expo Metro<input name="expoPort" type="number" min="1024" max="65535" required /><span class="field-error" data-error="expoPort"></span></label>
+            </div>
+            <label><span class="field-heading"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-network" /></svg>Phone network</span><select name="networkAddress" required><option value="">Finding network…</option></select><small id="network-help">Choose adapter phone can reach. VPNs may need manual selection.</small><span class="field-error" data-error="network.manualAddress"></span></label>
+            <label>Mobile runtime<select name="expoRuntime"><option value="development-build">Existing development build</option><option value="expo-go">Expo Go</option></select><small>Development build supports app’s native modules.</small></label>
+            <label class="check-row"><input name="openBrowser" type="checkbox" /><span>Open dashboard when runner starts</span></label>
+            <div class="form-actions"><button id="save-settings" class="button primary" type="submit" disabled>Save Settings</button><button id="check-setup" class="button secondary" type="button">Check Setup</button></div>
+          </form>
+          <div id="check-results" class="check-results hidden"></div>
+        </section></dialog>
+    <aside id="console-drawer" class="console-drawer hidden" aria-label="Service consoles" aria-hidden="true">
+      <header class="console-header"><div><p class="eyebrow">LIVE SERVICE OUTPUT</p><h2>Consoles</h2></div><div class="console-actions"><button id="console-fullscreen" class="button small"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-maximize" /></svg><span class="button-label">Full screen</span></button><button id="close-consoles" class="button small quiet" aria-label="Close consoles"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close" /></svg><span class="button-label">Close</span></button></div></header>
+      <div class="console-panes">
+        <section class="console-pane"><div class="console-pane-heading"><h3>Laravel API</h3><div class="console-pane-actions"><span class="pill">PHP</span><button id="pause-api-console" class="button small" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pause" /></svg><span class="button-label">Pause</span></button><button id="clear-api-console" class="button small quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-trash" /></svg><span class="button-label">Clear</span></button></div></div><div id="api-console" class="logs console-output" role="log" aria-live="polite"><p class="log-empty">Waiting for API output.</p></div></section>
+        <section class="console-pane"><div class="console-pane-heading"><h3>Expo Metro</h3><div class="console-pane-actions"><span class="pill">EXPO</span><button id="pause-expo-console" class="button small" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pause" /></svg><span class="button-label">Pause</span></button><button id="clear-expo-console" class="button small quiet"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-trash" /></svg><span class="button-label">Clear</span></button></div></div><div id="expo-console" class="logs console-output" role="log" aria-live="polite"><p class="log-empty">Waiting for Expo output.</p></div></section>
+      </div>
+    </aside>
+    <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title">
+      <header class="about-header"><div><p class="eyebrow">GUIDE</p><h2 id="about-title">About RN Laravel API Runner</h2></div><button id="close-about" class="button small quiet" aria-label="Close About">Close</button></header>
+      <div class="about-content">
+        <section class="about-intro"><h3>One place to run the mobile stack</h3><p>Runner starts your Laravel API and Expo app together, connects them through your selected LAN address, and shows the Expo link as a QR code.</p></section>
+        <section><h3>What it solves</h3><p>Before Runner, you had to open two terminals, start Laravel and Expo separately, and keep the mobile API URL in sync with your computer’s Wi-Fi address. When that address changed, the phone could point at the wrong API.</p><p>Runner reads the selected network address and service ports, then passes the matching API URL to Expo each time it starts. You do not need to edit either project’s <code>.env</code> file for a network change. If Wi-Fi changes while services run, stop and start them again.</p></section>
+        <section><h3>How the connection works</h3><ol><li>Runner starts Laravel on the configured API port, reachable from your LAN.</li><li>Runner starts the Expo CLI installed in your mobile project and gives that process <code>EXPO_PUBLIC_API_URL=http://LAN-address:API-port</code>.</li><li>Expo serves the app bundle. The phone reaches Laravel at that LAN URL.</li><li>Your app keeps its own tenant or domain configuration. Runner overrides <code>EXPO_PUBLIC_API_URL</code> and <code>REACT_NATIVE_PACKAGER_HOSTNAME</code> only for the Expo process it starts.</li></ol><p class="small-note">Runner does not edit mobile or backend <code>.env</code> files. API URL is temporary process environment, scoped to Expo Runner launches.</p><details><summary>Example Bash equivalent</summary><p class="small-note">Replace placeholder with your computer’s current LAN address. Use ports from Runner settings.</p><pre><code>LAN_IP="&lt;your-LAN-IP&gt;"&#10;API_PORT=8000&#10;EXPO_PORT=8081&#10;EXPO_PUBLIC_API_URL="http://$LAN_IP:$API_PORT" \&#10;REACT_NATIVE_PACKAGER_HOSTNAME="$LAN_IP" \&#10;npx expo start --lan --port "$EXPO_PORT" --dev-client</code></pre><p class="small-note">Run from the mobile project folder. Runner uses the project’s local Expo CLI and scopes these values to its Expo process.</p></details></section>
+        <section><h3>Available now</h3><ul><li>Configure mobile/API folders, PHP executable, ports, runtime, and phone-reachable network address.</li><li>Check setup, start both services, or start/restart/stop each service separately.</li><li>Generate a development-build or Expo Go link and QR code.</li><li>View separate API/Expo consoles, pause or clear each, dock right or expand full screen.</li><li>Switch light/dark theme. Duplicate Runner launches open the active dashboard; busy dashboard ports use a nearby free port.</li></ul></section>
+        <section><h3>Not supported yet</h3><ul><li>Choose a remote backend on another network. Runner currently connects Expo to the configured local Laravel API through your selected LAN.</li><li>Build, sign, or install an APK from this dashboard. Planned: run a configured Android build command from the mobile project’s <code>package.json</code>.</li><li>Start databases, queues, or Redis; run migrations; clear Laravel caches; or validate a full login and tenant flow.</li></ul><p class="small-note">API readiness currently means its port is listening. Phone access can still depend on Wi-Fi isolation, firewall rules, and matching tenant domains.</p></section>
+      </div>
+    </dialog>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

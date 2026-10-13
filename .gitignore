@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+runner.config.json
+.env
+.env.*
+!.env.example

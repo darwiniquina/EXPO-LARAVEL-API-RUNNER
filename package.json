@@ -1,0 +1,17 @@
+{
+  "name": "rn-laravel-api-runner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "check": "node src/server.mjs --check",
+    "test": "node --test test/config.test.mjs test/network.test.mjs test/expo-adapter.test.mjs test/event-buffer.test.mjs test/http.test.mjs test/process-platform.test.mjs"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
